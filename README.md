@@ -1,0 +1,4 @@
+# autocomplete-weex
+
+#LICENSE
+MIT

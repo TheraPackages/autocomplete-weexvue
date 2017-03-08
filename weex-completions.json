@@ -1,0 +1,79 @@
+{
+  "tags": [
+    "a",
+    "div",
+    "container",
+    "text",
+    "image",
+    "img",
+    "slider",
+    "input",
+    "list",
+    "cell",
+    "template",
+    "name",
+    "style",
+    "script"
+  ],
+  "commonProperties": [
+    {
+      "name": "class",
+      "values": [
+      ]
+    },
+    {
+      "name": "repeat",
+      "values": [
+      ]
+    },
+    {
+      "name": "onclick",
+      "values": [
+      ]
+    },
+    {
+      "name": "oninput",
+      "values": [
+      ]
+    },
+    {
+      "name": "value",
+      "values": [
+      ]
+    },
+    {
+      "name": "type",
+      "values": [
+      ]
+    },
+    {
+      "name": "style",
+      "values": [
+      ]
+    },
+    {
+      "name": "ref",
+      "values": [
+      ]
+    },
+    {
+      "name": "src",
+      "values": [
+      ]
+    },
+    {
+      "name": "width",
+      "values": [
+        "auto",
+        "inherit"
+      ]
+    },
+    {
+      "name": "height",
+      "values": [
+        "auto",
+        "inherit"
+      ]
+    }
+  ]
+}
