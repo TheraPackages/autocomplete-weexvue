@@ -157,7 +157,7 @@ module.exports =
     setTimeout(@triggerAutocomplete.bind(this, editor), 1) if suggestion.type is 'property'
 
   triggerAutocomplete: (editor) ->
-    atom.commands.dispatch(atom.views.getView(editor), 'autocomplete-plus:activate', {activatedManually: false})
+    atom.commands.dispatch(atom.views.getView(editor), 'thera-autocomplete-plus-plus:activate', {activatedManually: false})
 
   loadProperties: ->
     @commonProperties = []
