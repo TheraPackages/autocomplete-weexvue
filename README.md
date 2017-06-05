@@ -1,4 +1,4 @@
-# autocomplete-weex
+# autocomplete-weexvue
 
 #LICENSE
 MIT
