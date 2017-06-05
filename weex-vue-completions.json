@@ -1,0 +1,211 @@
+{
+  "tags": [
+    "a",
+    "div",
+    "text",
+    "textarea",
+    "image",
+    "img",
+    "slider",
+    "input",
+    "list",
+    "cell",
+    "template",
+    "style",
+    "script",
+    "switch"
+  ],
+  "properties": [
+    {
+      "name": "style",
+      "values": [
+        "scoped"
+      ]
+    },
+    {
+      "name": "a",
+      "values": [
+        "href",
+        "class",
+        "style"
+      ],
+      "events": [
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "div",
+      "values": [
+        "class",
+        "style"
+      ],
+      "events": [
+        "click",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "text",
+      "values": [
+        "class",
+        "value",
+        "style"
+      ],
+      "events": [
+        "click",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "textarea",
+      "values": [
+        "class",
+        "value",
+        "placeholder",
+        "disabled",
+        "autofocus",
+        "rows",
+        "style"
+      ],
+      "events": [
+        "input",
+        "change",
+        "focus",
+        "blur",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "image",
+      "values": [
+        "class",
+        "src",
+        "resize",
+        "placeholder",
+        "style"
+      ],
+      "events": [
+        "click",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "img",
+      "values": [
+        "class",
+        "src",
+        "resize",
+        "placeholder",
+        "style"
+      ]
+    },
+    {
+      "name": "slider",
+      "values": [
+        "class",
+        "auto-play",
+        "interval",
+        "infinite",
+        "offset-x-accuracy",
+        "style"
+      ],
+      "events": [
+        "change",
+        "click",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "input",
+      "values": [
+        "class",
+        "placeholder",
+        "type",
+        "value",
+        "disabled",
+        "autofocus",
+        "maxlength",
+        "return-key-type",
+        "style"
+      ],
+      "events": [
+        "input",
+        "change",
+        "focus",
+        "blur",
+        "return",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "list",
+      "values": [
+        "class",
+        "loadmoreoffset",
+        "offset-accuracy",
+        "style"
+      ],
+      "events": [
+        "loadmore",
+        "onscroll",
+        "scroll",
+        "click",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "cell",
+      "values": [
+        "class",
+        "keep-scroll-position",
+        "style"
+      ],
+      "events": [
+        "click",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    },
+    {
+      "name": "switch",
+      "values": [
+        "class",
+        "disabled",
+        "checked",
+        "style"
+      ],
+      "events": [
+        "change",
+        "click",
+        "longpress",
+        "appear",
+        "disappear"
+      ]
+    }
+  ],
+  "propertyValues": {
+      "disabled": ["true", "false"],
+      "checked": ["true", "false"],
+      "enabled": ["true", "false"],
+      "autofocus": ["true", "false"],
+      "type": ["text", "password", "url", "email", "tel"],
+      "auto-play": ["true", "false"]
+  }
+}

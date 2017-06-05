@@ -4,6 +4,7 @@
     "div",
     "container",
     "text",
+    "textarea",
     "image",
     "img",
     "slider",
@@ -11,9 +12,55 @@
     "list",
     "cell",
     "template",
-    "name",
     "style",
     "script"
+  ],
+  "properties": [
+    {
+      "name": "a",
+      "values": [
+      ]
+    },
+    {
+      "name": "div",
+      "values": [
+      ]
+    },
+    {
+      "name": "container",
+      "values": [
+      ]
+    },
+    {
+      "name": "text",
+      "values": [
+      ]
+    },
+    {
+      "name": "textarea",
+      "values": [
+      ]
+    },
+    {
+      "name": "image",
+      "values": [
+      ]
+    },
+    {
+      "name": "img",
+      "values": [
+      ]
+    },
+    {
+      "name": "slider",
+      "values": [
+      ]
+    },
+    {
+      "name": "input",
+      "values": [
+      ]
+    }
   ],
   "commonProperties": [
     {
