@@ -44,10 +44,10 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/include/node \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/src \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/deps/uv/include \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/deps/v8/include
+	-I/Users/huying/.node-gyp/iojs-1.3.15/include/node \
+	-I/Users/huying/.node-gyp/iojs-1.3.15/src \
+	-I/Users/huying/.node-gyp/iojs-1.3.15/deps/uv/include \
+	-I/Users/huying/.node-gyp/iojs-1.3.15/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=x-bridge' \
@@ -89,10 +89,10 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/include/node \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/src \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/deps/uv/include \
-	-I/Users/huying/.node-gyp/iojs-1.3.6/deps/v8/include
+	-I/Users/huying/.node-gyp/iojs-1.3.15/include/node \
+	-I/Users/huying/.node-gyp/iojs-1.3.15/src \
+	-I/Users/huying/.node-gyp/iojs-1.3.15/deps/uv/include \
+	-I/Users/huying/.node-gyp/iojs-1.3.15/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/x-bridge.o

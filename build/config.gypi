@@ -58,11 +58,11 @@
     "v8_use_snapshot": "true",
     "want_separate_host_toolset": 0,
     "xcode_version": "7.0",
-    "nodedir": "/Users/huying/.node-gyp/iojs-1.3.6",
+    "nodedir": "/Users/huying/.node-gyp/iojs-1.3.15",
     "copy_dev_lib": "true",
     "standalone_static_library": 1,
     "runtime": "electron",
-    "target": "1.3.6",
+    "target": "1.3.15",
     "disturl": "https://atom.io/download/atom-shell",
     "abi": "49"
   }

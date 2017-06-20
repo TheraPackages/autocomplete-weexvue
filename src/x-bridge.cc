@@ -1,7 +1,10 @@
 // x-bridge.cc
+#ifdef WIN32
+#include <windows.h>
+#else // unix
 #include <dlfcn.h>
 #include <unistd.h>
-
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,7 +25,12 @@ using v8::Array;
 
 typedef char *(*parse_proc)(char *s, size_t row, size_t column, char *name, char *prefix, char *tagName, char *attrName, char *scopeName, int *needClose, void *v8, void (*fn_classesCallback)(void *v8, char *name, char *active_document));
 
+#ifdef WIN32
+HMODULE g_lib = NULL;
+#else
 void *g_lib = NULL;
+#endif
+
 parse_proc g_fn_parse__Autocomplete = NULL;
 
 
@@ -71,7 +79,7 @@ void parse(const FunctionCallbackInfo<Value>& args) {
       char *ret = g_fn_parse__Autocomplete(&(*utf8Value)[0], row, column, name, prefix, tagName, attrName, scopeName, &need_close, isolate, callback);
       if (!ret) {
         return;
-       }
+      }
       Local<Object> objReturn = Object::New(isolate);
       objReturn->Set(String::NewFromUtf8(isolate, "autocomplete"), String::NewFromUtf8(isolate, ret));
       objReturn->Set(String::NewFromUtf8(isolate, "row"),          args[1]); // Number::New(isolate, row));
@@ -106,13 +114,21 @@ void load(const FunctionCallbackInfo<Value>& args) {
     char *libname = &(*utf8Value)[0];
     char *functionName = &(*utf8ValueFunc)[0];
     if (!g_lib) {
+#ifdef WIN32
+      g_lib = LoadLibrary(libname);
+#else
       g_lib = dlopen(libname, RTLD_LAZY);
+#endif
       if (!g_lib) {
         args.GetReturnValue().Set(Boolean::New(isolate, false));
         return;
       }
 
+#ifdef WIN32
+      g_fn_parse__Autocomplete = (parse_proc)GetProcAddress(g_lib, functionName);
+#else
       g_fn_parse__Autocomplete = (parse_proc)dlsym(g_lib, functionName);
+#endif
       if (!g_fn_parse__Autocomplete) {
         dlclose(g_lib);
         g_lib = NULL;
