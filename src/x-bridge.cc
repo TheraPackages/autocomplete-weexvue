@@ -97,6 +97,15 @@ void parse(const FunctionCallbackInfo<Value>& args) {
   }
 }
 
+#ifdef WIN32
+LPSTR ConvertErrorCodeToString(DWORD ErrorCode) {
+	HLOCAL LocalAddress = NULL;
+	FormatMessageA(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
+		NULL, ErrorCode, 0, (PTSTR)&LocalAddress, 0, NULL);
+	return (LPSTR)LocalAddress;
+}
+#endif
+
 // load function
 // load(libname, functionname)
 void load(const FunctionCallbackInfo<Value>& args) {
@@ -116,6 +125,14 @@ void load(const FunctionCallbackInfo<Value>& args) {
     if (!g_lib) {
 #ifdef WIN32
       g_lib = LoadLibraryA(libname);
+
+	  if (!g_lib) {
+		  DWORD nErrno = GetLastError();
+		  LPSTR lpMsgBuf = ConvertErrorCodeToString(nErrno);
+		  fprintf(stderr, "lib load failed: %s\n", lpMsgBuf);
+		  LocalFree(lpMsgBuf);
+		  return;
+	  }
 #else
       g_lib = dlopen(libname, RTLD_LAZY);
 #endif
