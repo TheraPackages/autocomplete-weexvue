@@ -174,11 +174,16 @@ void clear(const FunctionCallbackInfo<Value>& args) {
   }
 }
 
+void cpu_addr_size(const FunctionCallbackInfo<Value>& args) {
+  args.GetReturnValue().Set(Number::New(args.GetIsolate(), sizeof (void *) * 8));
+}
+
 
 void init(Local<Object> exports) {
   NODE_SET_METHOD(exports, "parse", parse);
   NODE_SET_METHOD(exports, "load", load);
   NODE_SET_METHOD(exports, "clear", clear);
+  NODE_SET_METHOD(exports, "cpu_addr_size", cpu_addr_size);
 }
 
 NODE_MODULE(xbridge, init)
