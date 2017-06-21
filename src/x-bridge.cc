@@ -125,7 +125,7 @@ void load(const FunctionCallbackInfo<Value>& args) {
       }
 
 #ifdef WIN32
-      g_fn_parse__Autocomplete = (parse_proc)GetProcAddressA(g_lib, functionName);
+      g_fn_parse__Autocomplete = (parse_proc)GetProcAddress(g_lib, functionName);
 #else
       g_fn_parse__Autocomplete = (parse_proc)dlsym(g_lib, functionName);
 #endif
