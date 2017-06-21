@@ -115,7 +115,7 @@ void load(const FunctionCallbackInfo<Value>& args) {
     char *functionName = &(*utf8ValueFunc)[0];
     if (!g_lib) {
 #ifdef WIN32
-      g_lib = LoadLibrary(libname);
+      g_lib = LoadLibraryA(libname);
 #else
       g_lib = dlopen(libname, RTLD_LAZY);
 #endif
@@ -125,7 +125,7 @@ void load(const FunctionCallbackInfo<Value>& args) {
       }
 
 #ifdef WIN32
-      g_fn_parse__Autocomplete = (parse_proc)GetProcAddress(g_lib, functionName);
+      g_fn_parse__Autocomplete = (parse_proc)GetProcAddressA(g_lib, functionName);
 #else
       g_fn_parse__Autocomplete = (parse_proc)dlsym(g_lib, functionName);
 #endif
