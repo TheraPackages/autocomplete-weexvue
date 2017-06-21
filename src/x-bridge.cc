@@ -130,7 +130,11 @@ void load(const FunctionCallbackInfo<Value>& args) {
       g_fn_parse__Autocomplete = (parse_proc)dlsym(g_lib, functionName);
 #endif
       if (!g_fn_parse__Autocomplete) {
+#ifdef WIN32
+        FreeLibrary(g_lib);
+#else
         dlclose(g_lib);
+#endif
         g_lib = NULL;
         args.GetReturnValue().Set(Boolean::New(isolate, false));
         return;
@@ -144,7 +148,11 @@ void load(const FunctionCallbackInfo<Value>& args) {
 
 void clear(const FunctionCallbackInfo<Value>& args) {
   if (g_lib) {
+#ifdef WIN32
+    FreeLibrary(g_lib);
+#else
     dlclose(g_lib);
+#endif
     g_lib = NULL;
   }
 }
